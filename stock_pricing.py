@@ -1,14 +1,7 @@
-# entering the prices on different days
-days_num = int(input("For how many days do you want to check your profit: "))
-daily_prices = []
-for i in range(days_num):
-    price = int(input(f"Enter the price on day {i + 1}: "))
-    daily_prices.append(price)
-
 # defining a function to calculate max profit
 
-
 def max_profit(prices):
+    # adding initial values for variables
     buying_day = 0
     selling_day = 1
     highest_profit = prices[1] - prices[0]
@@ -22,6 +15,15 @@ def max_profit(prices):
                 highest_profit = prices[j] - prices[i]
 
     return (print(f"The best days to buy and sell are day {buying_day}, and day {selling_day}, where the max profit is {highest_profit}"))
+
+
+# entering the prices on different days
+
+days_num = int(input("For how many days do you want to check your profit: "))
+daily_prices = []
+for i in range(days_num):
+    price = int(input(f"Enter the price on day {i + 1}: "))
+    daily_prices.append(price)
 
 
 max_profit(daily_prices)
